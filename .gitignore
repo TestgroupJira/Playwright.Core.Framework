@@ -1,0 +1,17 @@
+# Carpetas de compilación
+bin/
+obj/
+test-results/
+
+# Playwright y Evidencia
+Evidencia/
+allure-results/
+.playwright/
+
+# Secretos y Configuración local
+Data/auth.json
+*.user
+
+# VS Code y Visual Studio
+.vscode/
+.vs/

@@ -1,0 +1,9 @@
+{
+  "Playwright": {
+    "Urls": {
+        "UrlBase": ""
+    },
+    "Timeout": 15000,
+    "Browser": "Chromium"
+  }
+}
