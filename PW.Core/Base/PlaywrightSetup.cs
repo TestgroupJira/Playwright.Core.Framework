@@ -1,7 +1,7 @@
 ﻿using Microsoft.Playwright;
 using PW.Core.Config;
 
-namespace PW.Core.Base
+namespace PW.Core
 {
     // Configurar el entorno de pruebas antes de cada test
     [SetUpFixture]

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Playwright;
+using PW.Core;
 using PW.Core.Fixtures;
 
 namespace PW.Core.Base
