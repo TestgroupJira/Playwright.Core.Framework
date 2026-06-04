@@ -23,6 +23,23 @@ namespace PW.Core.Base
         [TearDown]
         public async Task Teardown()
         {
+            //Allure: Para el trace después de cada test utilizando el método del fixture
+            string tracePath = Path.Combine(
+                "../../../Artifacts/AllureResults/Trace",
+                $"Trace.zip");
+
+            await Context.Tracing.StopAsync(new()
+            {  
+                Path = tracePath
+            });
+           
+            Allure.Net.Commons.AllureApi.AddAttachment(
+                "Trace",
+                "application/zip",
+                tracePath
+            );
+            //Allure: Fin trace
+
             // Cerrar el contexto después de cada test utilizando el método del fixture
             await Fixture.CerrarContext();
         }

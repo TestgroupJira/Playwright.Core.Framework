@@ -15,6 +15,25 @@ namespace PW.Core
         [OneTimeSetUp]
         public async Task GlobalSetup()
         {
+            // Allure: Limpiar el directorio de resultados de Allure antes de ejecutar las pruebas
+            var rootPath = Path.GetFullPath(
+                Path.Combine(AppContext.BaseDirectory, @"..\..\..\")
+            );
+
+            var allurePath = Path.Combine(
+                rootPath,
+                "Artifacts",
+                "AllureResults"
+            );
+
+            if (Directory.Exists(allurePath))
+            {
+                Directory.Delete(allurePath, true);
+            }
+
+            Directory.CreateDirectory(allurePath);
+            // Allure: Fin limpiar el directorio de resultados de Allure antes de ejecutar las pruebas
+
             // Iniciar playwright antes de todos los tests
             PlaywrightInstance = await Playwright.CreateAsync();
 
